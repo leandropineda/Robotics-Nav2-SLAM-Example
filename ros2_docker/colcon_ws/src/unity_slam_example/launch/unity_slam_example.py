@@ -17,7 +17,6 @@ def generate_launch_description():
             ),
         ),
 
-
         Node(
             package='rviz2',
             executable='rviz2',

@@ -24,6 +24,7 @@ public class ROSTransformTreePublisher : MonoBehaviour
     double m_LastPublishTimeSeconds;
 
     TransformTreeNode m_TransformRoot;
+    [SerializeField]
     ROSConnection m_ROS;
 
     double PublishPeriodSeconds => 1.0f / m_PublishRateHz;
@@ -39,7 +40,7 @@ public class ROSTransformTreePublisher : MonoBehaviour
             m_RootGameObject = gameObject;
         }
 
-        m_ROS = ROSConnection.instance;
+        // m_ROS = GetComponentInParent<ROSConnection>();
         m_TransformRoot = new TransformTreeNode(m_RootGameObject);
         m_ROS.RegisterPublisher<TFMessageMsg>(k_TfTopic);
         m_LastPublishTimeSeconds = Clock.time + PublishPeriodSeconds;

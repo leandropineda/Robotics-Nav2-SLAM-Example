@@ -56,6 +56,7 @@ public class LaserScanSensor : MonoBehaviour
 
     float m_CurrentScanAngleStart;
     float m_CurrentScanAngleEnd;
+    [SerializeField]
     ROSConnection m_Ros;
     bool m_HaveWarnedNoMarkerPrefab;
     double m_TimeNextScanSeconds = -1;
@@ -68,7 +69,7 @@ public class LaserScanSensor : MonoBehaviour
 
     protected virtual void Start()
     {
-        m_Ros = ROSConnection.instance;
+        // m_Ros = ROSConnection.instance;
         m_Ros.RegisterPublisher(topic, "sensor_msgs/LaserScan");
 
         m_CurrentScanAngleStart = ScanAngleStartDegrees;

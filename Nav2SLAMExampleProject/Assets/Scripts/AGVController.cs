@@ -26,6 +26,7 @@ namespace RosSharp.Control
         public float ROSTimeout = 0.5f;
         private float lastCmdReceived = 0f;
 
+        [SerializeField]
         ROSConnection ros;
         private RotationDirection direction;
         private float rosLinear = 0f;
@@ -37,7 +38,7 @@ namespace RosSharp.Control
             wA2 = wheel2.GetComponent<ArticulationBody>();
             SetParameters(wA1);
             SetParameters(wA2);
-            ros = ROSConnection.instance;
+            // ros = ROSConnection.instance;
             ros.Subscribe<TwistMsg>("cmd_vel", ReceiveROSCmd);
         }
 
