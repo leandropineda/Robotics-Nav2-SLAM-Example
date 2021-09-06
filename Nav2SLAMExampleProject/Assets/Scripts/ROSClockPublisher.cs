@@ -17,6 +17,7 @@ public class ROSClockPublisher : MonoBehaviour
 
     double m_LastPublishTimeSeconds;
 
+    [SerializeField]
     ROSConnection m_ROS;
 
     double PublishPeriodSeconds => 1.0f / m_PublishRateHz;
@@ -50,7 +51,6 @@ public class ROSClockPublisher : MonoBehaviour
     void Start()
     {
         SetClockMode(m_ClockMode);
-        m_ROS = ROSConnection.instance;
         m_ROS.RegisterPublisher("clock", "rosgraph_msgs/Clock");
     }
 
