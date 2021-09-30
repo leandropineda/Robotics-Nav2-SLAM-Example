@@ -26,11 +26,11 @@ public class ROSClockPublisher : MonoBehaviour
 
     void OnValidate()
     {
-        var clocks = FindObjectsOfType<ROSClockPublisher>();
-        if (clocks.Length > 1)
-        {
-            Debug.LogWarning("Found too many clock publishers in the scene, there should only be one!");
-        }
+        // var clocks = FindObjectsOfType<ROSClockPublisher>();
+        // if (clocks.Length > 1)
+        // {
+        //     Debug.LogWarning("Found too many clock publishers in the scene, there should only be one!");
+        // }
 
         if (Application.isPlaying && m_LastSetClockMode != m_ClockMode)
         {
